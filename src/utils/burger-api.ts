@@ -56,7 +56,7 @@ export const refreshToken = (): Promise<TRefreshResponse> =>
 export const fetchWithRefresh = async <T>(
   url: RequestInfo,
   options: RequestInit
-): Promise<T> => {
+  ): Promise<T> => {
   try {
     const res = await fetch(url, options);
     return await checkResponse<T>(res);

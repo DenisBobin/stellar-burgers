@@ -16,6 +16,7 @@ export const BurgerConstructorUI = ({
   orderRequest,
   price,
   orderModalData,
+  orderError,
   onOrderClick,
   closeOrderModal,
 }: BurgerConstructorUIProps): React.JSX.Element => (
@@ -85,6 +86,14 @@ export const BurgerConstructorUI = ({
     {orderRequest && (
       <Modal onClose={closeOrderModal} title={'Оформляем заказ...'}>
         <Preloader />
+      </Modal>
+    )}
+
+    {orderError && (
+      <Modal onClose={closeOrderModal} title="Ошибка оформления заказа">
+        <p className="text text_type_main-default">
+          {orderError}
+        </p>
       </Modal>
     )}
 
